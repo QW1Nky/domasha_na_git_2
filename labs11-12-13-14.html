@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1
+function Sum() {
+
+    console.log('lab 11');
+
+    console.log('1 задание')
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    var A = 0, B = 0;
+
+    A = +prompt('Введите 1 число', "");
+    B = +prompt('Введите 2 число', "");
+
+    console.log(A + ' + ' + B + ' = ' + (A + B))
+    A = A + B;
+    alert(A)
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+}
+// 2
+
+
+function ex2(A)
+{
+    A = +prompt('Введите число', "");
+    twoPow(A);
+}
+
+function twoPow(A) {
+    console.log('2 задание')
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+
+    console.log(A + '^2 ' + ' = ' + (A * A))
+    alert(A * A)
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+}
+// 3
+function averageArr() {
+    console.log('3 задание')
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    var arr = [2, 4, 6, 8, 10];
+    var A = 0;
+
+    for (var i = 0; i < arr.length - 1; i++) { A += arr[i];}
+
+    console.log('Среднее арифметическое = ' + (A / (arr.length - 1)))
+
+    alert(A / (arr.length - 1));
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+}
+
+// 4
+function ex4() {
+    console.log('4 задание')
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+
+    A = +prompt('Введите возраст', "");
+
+    if ((A >= 1) && (A <= 13)) {
+        console.log('Возрастня категория = детство');
+        alert('Возрастня категория = детство');
+    }
+    if ((A >= 14) && (A <= 25)) {
+        console.log('Возрастня категория = юность');
+        alert('Возрастня категория = юность');
+    }
+    if ((A >= 26) && (A <= 69)) {
+        console.log('Возрастня категория = зрелость');
+        alert('Возрастня категория = зрелость');
+    }
+    if ((A >= 70)) {
+        console.log('Возрастня категория = старость');
+        alert('Возрастня категория = старость');
+    }
+
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+}
+
+// 5
+function maxArr() {
+    console.log('5 задание')
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+
+    var arr = [-2, 4, 216, -8, 10, -114, 14, 1], max = -Infinity;
+    console.log(arr);
+    for (var i = 0; i < arr.length - 1; i++)
+    {
+        if ((arr[i] >= -10) && (arr[i] <= 10) && (arr[i] > max)) { max = arr[i];}
+    }
+
+    console.log('Максимальное значение массива (от -10 до 10) = ' + max);
+    alert('Максимальное значение массива (от -10 до 10) = ' + max);
+
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+}
+
+
+
+// 1
+console.log('lab 12');
+console.log('1 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+//Создание пустых объектов
+var student = {};
+//var student  = new Object();
+//var student  = Object.create({});
+
+student.name = "Ибраим";
+student.surname = "Петров";
+
+
+student.name = "Вася";
+
+delete student['name'];
+
+console.log('age' in student);
+
+console.log('surname в объекте student = ' + student.surname);
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 2
+console.log('2 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var rating = {
+    "Васильев Вася": 5,
+    "Петров Петя": 4,
+    "Алиумерова Асие": 2
+};
+
+var k = 0, srb = 0;
+
+for (var key in rating) { k++; }
+
+if (k > 0) {
+
+    for (var key in rating) { srb += rating[key]; }
+    srb = srb / k;
+    console.log("Средний балл равен: " + srb);
+}
+else {
+
+    console.log(0);
+}
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 3
+console.log('3 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var salaries = new Object();
+
+
+salaries = {
+    "Анна": 500,
+    "Иван": 40,
+    "Алие": 200
+};
+
+var k = 0, max = 0, name = '';
+
+for (var key in salaries) { k++; }
+
+if (k > 0) {
+
+    for (var key in salaries) {
+        if (max < salaries[key]) {
+            max = salaries[key];
+            name = key;
+        }
+    }
+    console.log(name);
+}
+else {
+
+    console.log('нет сотрудников');
+}
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 4
+console.log('4 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+
+var country = {
+    "название страны": 'Россия',
+    "численность (чел.)": 144500000,
+    "площадь (кв.км)": 17100000,
+    "столица": {
+        "название": 'Москва',
+        "год основания": 1147
+    }
+};
+
+country['плотность населения'] = country['численность (чел.)'] / country['площадь (кв.км)'];
+
+console.log('Плотность населения = ' + country['плотность населения'] + ' чел/км²');
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+
+// 1
+console.log('lab 13');
+console.log('1 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var user = { name: "Vasya", age: 17 };
+var admin = user;
+admin.name = "Petya";
+console.log(user.name)//Выведет Petya
+
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 2
+console.log('2 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var user = { name: "Vasya", age: 17 };
+var userClone = {};
+for (var key in user)
+{
+    userClone[key] = user[key];
+}
+userClone.name = "Petya";
+console.log(user.name)//Выведет Vasya
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 3
+console.log('3 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var A = [], sum = 0, i = 0;
+
+while (true) {
+    A[i] = +prompt('Введите число', '')
+    if (A[i] == '') { break;}
+    i++;
+}
+
+for (var i = 0; i < A.length - 1; i++) {
+    sum += A[i];
+}
+console.log('Сумма всех элементов массива = ' + sum);
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 4
+console.log('4 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var arr = [12, 12, 45];
+var Arr = arr;
+Arr[2] = 1000;
+console.log(Arr[2]);
+console.log(arr[2]);//Выведет 1000
+
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+// 5
+console.log('5 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var arr = [12, 12, 45];
+var Arr = [];
+
+for (var i = 0; i < arr.length; i++) {
+    Arr[i] = arr[i];
+}
+
+Arr[2] = 1000;
+console.log(Arr[2]);
+console.log(arr[2]);//Выведет 45
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+// 6
+console.log('6 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var bankUser = {
+    "доход": function () {
+        if ((bankUser['размер вклада в руб.'] >= 100) &&
+            (bankUser['размер вклада в руб.'] <= 10000) &&
+            (bankUser.срок >= 1) &&
+            (bankUser.срок <= 12)) {
+            //12%
+            var rvklada2 = bankUser['размер вклада в руб.'];
+
+            for (var i = 0; i < bankUser.срок; i++) {
+                rvklada2 *= 1.01;
+            }
+            return (rvklada2 - bankUser['размер вклада в руб.']).toFixed(2);
+        } else
+        {
+            if ((bankUser['размер вклада в руб.'] > 10000) &&
+                (bankUser.срок >= 12) &&
+                (bankUser.срок <= 36)) {
+                //22%
+                var rvklada2 = bankUser['размер вклада в руб.'];
+
+                for (var i = 0; i < bankUser.срок; i++) {
+                    rvklada2 *= 1.0183;
+                }
+                return (rvklada2 - bankUser['размер вклада в руб.']).toFixed(2);
+            }
+        }
+
+    }
+};
+
+bankUser['имя вкладчика'] = prompt('Введите имя вкладчика','')
+bankUser['размер вклада в руб.'] = +prompt('Введите размер вклада в руб.','')
+bankUser.срок = +prompt('Введите срок.(колличество месяцев)','')
+
+var bankUserCopy = bankUser;
+var bankUserClone = {};
+for (var key in bankUser) { bankUserClone[key] = bankUser[key]; }
+bankUser['имя вкладчика'] = 'Артур'
+
+
+console.log(bankUser);
+console.log(bankUserCopy);
+console.log(bankUserClone);
+console.log("Если хотим получить (Доход) то прописываем: ")
+console.log("console.log(bankUser.доход())")
+console.log(bankUser.доход());
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 1
+console.log('lab 14');
+console.log('1 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var student = new Object();
+  student.name = "Ибрагим";
+  student.surname = "Петров";
+  student.name = "Вася";
+  delete student.name;
+  console.log('age' in student)
+  console.log(student.surname);
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 2
+console.log('2 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+
+var rating = {
+    "Васильев Вася": 5,
+    "Петров Петя": 4,
+    "Алиумерова Асие": 2
+};
+
+var k = 0, srb = 0;
+
+for (var key in rating) { k++; }
+
+if (k > 0)
+{
+
+    for (var key in rating) { srb += rating[key]; }
+    srb = srb / k;
+    console.log("Средний балл равен: " + srb);
+}
+else {
+
+    console.log(0);
+}
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 3
+console.log('3 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var salaries = new Object();
+
+salaries = {
+    "Анна": 500,
+    "Иван": 40,
+    "Алие": 200
+};
+
+var k = 0, max = 0, name ='';
+
+for (var key in salaries) { k++; }
+
+if (k > 0) {
+    for (var key in salaries)
+    {
+        if (max < salaries[key])
+        {
+            max = salaries[key];
+            name = key;
+        }
+    }
+    console.log(name);
+}
+else {
+    console.log(0);
+}
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+// 4
+console.log('4 задание');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var salaries = new Object();
+
+
+menu = {
+    "width": 500,
+    "height": 300,
+    "title": "My menu"
+};
+
+console.log('Было: ');
+for (var key in menu) { console.log(key + " " + menu[key]) }
+
+for (var key in menu) {
+    if (typeof (menu[key]) == 'number')
+    {
+        menu[key] *= 2;
+    }
+}
+
+console.log('Стало: ');
+for (var key in menu) { console.log(key + " " + menu[key]) }
+
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');    
+  </script>
+</body>
+</html>
